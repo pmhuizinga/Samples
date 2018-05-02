@@ -67,6 +67,6 @@ for x in range(df.shape[0]):
     for y in range(df.shape[1])[1:]:
         df_contribution.iloc[x,y] = df.iloc[x,y] * weights_rebal[x][y-1]
         
-
+# nu nog de contributies sommeren op regelniveau en vervolgens cumululeren op kolom niveau
 
 
