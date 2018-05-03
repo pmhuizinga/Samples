@@ -1,0 +1,16 @@
+# Opdracht
+# Bepaal de X beste Y maand returns en rebalance de portefeuille naar deze X.
+# Rebalance vervolgens na Z maanden de portefeuille. Gewichten initieel gelijk (kan later nog naar market cap)
+# Initieel geen transactiekosten.
+#
+# Dus eerste Y maanden geen actie (immers: nog geen Y maand returns)
+#
+# Bepaal geoptimaliseerde X en Y en Z rekening houdend met kosten factor A.
+# Dus: welke stocks hebben de afgelopen periode het best gepresteerd? Deze kopen. Na X periode herzien.
+
+# benodigd:
+# test/trainset obv 70 train/ 30 test
+# bereik met cumulatieve x maand rendementen per aandeel
+# functie om het cumulatieve rendement van het mandje te berekenen
+# laatste maand v/d set is bepalend
+# plotje maken van het geoptimaliseerde rendement tov de aex
