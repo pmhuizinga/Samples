@@ -4,7 +4,7 @@ import numpy as np
 
 # Variables
 nr_of_stocks = 2 # Number of best performing stocks
-nr_of_cumulative_periods = 2 # Number of periods to calculate cumulative returns
+nr_of_cumulative_periods = 4 # Number of periods to calculate cumulative returns
 rebalance_frequency = 2 # Number of periods to rebalancing
 transaction_costs = 0.01 # 1%
 
@@ -16,7 +16,7 @@ df = pd.read_excel(file, sheet, header=0)
 df = df[1:]
 
 # even tijdelijk het bereik verkleinen tbv test
-# df = df.iloc[0:10,0:4]
+df = df.iloc[0:10,0:4]
 
 # Sortering op datum
 df.sort_values(by=['Name'])
@@ -48,9 +48,6 @@ for x in range(df.shape[0]):
     for y in range(df.shape[1])[1:]:
         df_contribution.iloc[x,y] = df.iloc[x,y] * weights_rebal[x][y-1]
 
-# let op: aanpassen naar sumproduct (1+x)
-result = df_contribution.iloc[:,1:].sum(axis=1).cumsum().iloc[-1]
-
-
-
+# Bepaal cu ulatief rendement van de basket
+result = (np.cumprod((1+(df_contribution.iloc[:,1:].sum(axis=1))))-1).iloc[-1]
 
