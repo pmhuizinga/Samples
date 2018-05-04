@@ -16,7 +16,7 @@ def data_prep(df):
     # Verwijder eerste record (met datastream security code)
     df = df[1:]
     # even tijdelijk het bereik verkleinen tbv test
-    df = df.iloc[0:10,0:4]
+    # df = df.iloc[0:20,0:10]
     # Sortering op datum
     df.sort_values(by=['Name'])
     return df
@@ -62,6 +62,8 @@ for i in range(2, 5):
     for j in range(1, 5):
         for x in range(1, 5):
             print("stocks:", i, "period:", j, "rebalance:", x, "return:", calc_basket_return(df, i, j, x, 0.01))
+            
+
 
     
 
