@@ -17,6 +17,7 @@ def BasicStatistics(dataframe):
                              int(dataframe.iloc[:,i].count()), \
                              format(dataframe.iloc[:,i].sum(), '4f'), \
                              int(dataframe.iloc[:,i].nunique()), \
+                             '', \
                              int(dataframe.iloc[:,i].isnull().sum()), \
                              ''])
         elif dataframe.iloc[:,i].dtypes == 'object':
@@ -34,6 +35,7 @@ def BasicStatistics(dataframe):
                              int(dataframe.iloc[:,i].count()), \
                              '' , \
                              int(dataframe.iloc[:,i].nunique()), \
+                             '', \
                              int(dataframe.iloc[:,i].isnull().sum()), \
                              ''])
     columns = (['column', \
