@@ -1,8 +1,12 @@
 import pandas as pd
+import numpy as np
 
 notapplicables = "N/A|NA|Not applicable|#NA"
 
-def BasicStatistics(dataframe):
+def test():
+    return 'paul'
+
+def BasicStats(dataframe):
     statframe = []
     statlist = []
     cols = dataframe.columns.tolist()
@@ -26,6 +30,10 @@ def BasicStatistics(dataframe):
                              int(dataframe.iloc[:,i].count()), \
                              '', \
                              int(dataframe.iloc[:,i].nunique()), \
+#                                 if int(dataframe.iloc[:,i].nunique()) < 15:
+#                                     set(dataframe.iloc[:,i]), \
+#                                 else:
+#                                         '', \
                              set(dataframe.iloc[:,i]), \
                              int(dataframe.iloc[:,i].isnull().sum()), \
                              dataframe.iloc[:,i].str.contains(notapplicables, na=True).sum()])
