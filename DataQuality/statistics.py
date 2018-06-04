@@ -20,12 +20,17 @@ def BasicStats(dataframe):
                              int(dataframe.iloc[:,i].isnull().sum()),
                              ''])
         elif dataframe.iloc[:, i].dtypes == 'object':
+            if int(dataframe.iloc[:,i].nunique()) > 15:
+                uniquelist = 'too many'
+            else:
+                uniquelist = set(dataframe.iloc[:,i])
             statlist.append([cols[i],'string',
                              '' ,'' ,'' ,'' ,'' ,
                              int(dataframe.iloc[:,i].count()),
                              '',
                              int(dataframe.iloc[:,i].nunique()),
-                             set(dataframe.iloc[:,i]),
+                             uniquelist,
+                             # set(dataframe.iloc[:,i]),
                              int(dataframe.iloc[:,i].isnull().sum()),
                              dataframe.iloc[:,i].str.contains(notapplicables, na=True).sum()])
         elif dataframe.iloc[:, i].dtypes == 'datetime64[ns]':
