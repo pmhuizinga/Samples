@@ -9,12 +9,12 @@ import statistics as stat
 
 conn = pyodbc.connect(
     r'DRIVER={SQL Server};'
-    r'SERVER=UKDBCSDEVCLD001\CLD01DEV;'
-    r'DATABASE=Markit_EDM_TEST_v95;'
+    r'SERVER=<servername>;'
+    r'DATABASE=<databasename>;'
     r'Trusted_Connection=yes;'
     )
 
-sql = "SELECT * FROM T_MASTER_SEC"
+sql = "SELECT * FROM <table>"
 
 df = pd.read_sql(sql, conn)
 
