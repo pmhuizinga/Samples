@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep 11 15:45:57 2018
-
+test string voor github
 @author: pmhui
 """
 # import libraries
